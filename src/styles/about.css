@@ -1,0 +1,196 @@
+.about-section{
+    padding:110px 0;
+}
+
+.about-container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.about-label{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    color:#d8b4fe;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+}
+
+.about-title{
+    text-align:center;
+
+    font-size:4rem;
+
+    color:white;
+
+    margin-bottom:30px;
+}
+
+.about-title span{
+    background:linear-gradient(
+        135deg,
+        #9333ea,
+        #ec4899
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+.about-description{
+
+    width:min(850px,90%);
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:70px;
+}
+
+.about-description p{
+
+    color:#c7c0d2;
+
+    font-size:1.1rem;
+
+    line-height:2;
+
+    font-weight:400;
+}
+
+.about-description span{
+
+    color:#f0abfc;
+
+    font-weight:700;
+}
+
+.about-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+}
+
+.about-card{
+
+    background:#151127;
+
+    border:1px solid rgba(168,85,247,.25);
+
+    border-radius:20px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    transition:.35s;
+}
+
+.about-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#ec4899;
+
+    box-shadow:0 0 30px rgba(236,72,153,.15);
+}
+
+.about-icon{
+
+    width:75px;
+
+    height:75px;
+
+    margin:auto;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.8rem;
+
+    color:#f0abfc;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(147,51,234,.25),
+        rgba(236,72,153,.25)
+    );
+}
+
+.about-card h3{
+
+    color:white;
+
+    margin-bottom:15px;
+
+    font-size:1.8rem;
+}
+
+.about-card p{
+
+    color:#b9b1c4;
+
+    line-height:1.7;
+
+    font-size:1rem;
+}
+
+@media(max-width:992px){
+
+.about-cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.about-title{
+
+font-size:3rem;
+
+}
+
+.about-description{
+
+width:95%;
+
+}
+
+.about-description p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+}
+
+.about-cards{
+
+grid-template-columns:1fr;
+
+}
+
+}

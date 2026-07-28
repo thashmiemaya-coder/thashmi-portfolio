@@ -1,0 +1,360 @@
+.home-section {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  padding: 130px 0 75px;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(168, 85, 247, 0.13),
+      transparent 33%
+    ),
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(236, 72, 153, 0.11),
+      transparent 34%
+    );
+}
+
+.home-container {
+  display: grid;
+  width: min(1200px, 90%);
+  margin: 0 auto;
+  align-items: center;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 70px;
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+}
+
+.home-greeting {
+  margin-bottom: 18px;
+  color: #e879f9;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.home-title {
+  margin-bottom: 24px;
+  color: #ffffff;
+  font-size: clamp(3.4rem, 6.5vw, 6rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -2px;
+}
+
+.home-title .second-name,
+.home-title .surname {
+  display: block;
+}
+
+.home-title .surname {
+  margin-top: 8px;
+  background: linear-gradient(
+    90deg,
+    #8b5cf6 0%,
+    #c026d3 50%,
+    #ec4899 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.home-role {
+  margin-bottom: 24px;
+  color: #f8f5ff;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 700;
+}
+
+.home-description {
+  max-width: 650px;
+  margin-bottom: 34px;
+  color: #bcb3c7;
+  font-size: 1.03rem;
+  line-height: 1.85;
+}
+
+.home-buttons {
+  display: flex;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  min-height: 54px;
+  padding: 0 29px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 700;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.primary-button {
+  border: 1px solid transparent;
+  color: #ffffff;
+  background: linear-gradient(135deg, #8b5cf6, #c026d3, #ec4899);
+  box-shadow:
+    0 10px 28px rgba(236, 72, 153, 0.25),
+    0 0 24px rgba(168, 85, 247, 0.18);
+}
+
+.primary-button:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 34px rgba(236, 72, 153, 0.38),
+    0 0 38px rgba(168, 85, 247, 0.28);
+}
+
+.secondary-button {
+  border: 1px solid #ec4899;
+  color: #f0abfc;
+  background: rgba(236, 72, 153, 0.04);
+}
+
+.secondary-button:hover {
+  border-color: #f472b6;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.2),
+    rgba(236, 72, 153, 0.2)
+  );
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.2);
+  transform: translateY(-4px);
+}
+
+.social-area > p {
+  margin-bottom: 15px;
+  color: #c7bdcf;
+  font-size: 0.95rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 14px;
+}
+
+.social-links a {
+  display: flex;
+  width: 47px;
+  height: 47px;
+  border: 1px solid rgba(236, 72, 153, 0.45);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: #f0abfc;
+  background: rgba(19, 13, 35, 0.65);
+  box-shadow: inset 0 0 15px rgba(168, 85, 247, 0.05);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.3);
+  transform: translateY(-5px);
+}
+
+.home-image-area {
+  position: relative;
+  display: flex;
+  min-height: 560px;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.34),
+    rgba(168, 85, 247, 0.25) 45%,
+    transparent 72%
+  );
+  filter: blur(30px);
+}
+
+.image-circle {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 430px;
+  height: 430px;
+  padding: 4px;
+  overflow: hidden;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  box-shadow:
+    0 0 36px rgba(236, 72, 153, 0.34),
+    0 0 65px rgba(168, 85, 247, 0.25);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border: 4px solid #0d0817;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  background: #ffffff;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.42);
+  animation: floatCircle 5s ease-in-out infinite;
+}
+
+.circle-one {
+  top: 80px;
+  left: 20px;
+  width: 42px;
+  height: 42px;
+}
+
+.circle-two {
+  right: 15px;
+  bottom: 145px;
+  width: 31px;
+  height: 31px;
+  animation-delay: 1s;
+}
+
+.circle-three {
+  bottom: 55px;
+  left: 65px;
+  width: 23px;
+  height: 23px;
+  animation-delay: 2s;
+}
+
+@keyframes floatCircle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .home-section {
+    padding-top: 125px;
+  }
+
+  .home-container {
+    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .home-content {
+    order: 2;
+  }
+
+  .home-image-area {
+    order: 1;
+    min-height: auto;
+  }
+
+  .home-description {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .home-buttons,
+  .social-links {
+    justify-content: center;
+  }
+
+  .image-circle {
+    width: min(390px, 82vw);
+    height: min(390px, 82vw);
+  }
+
+  .image-glow {
+    width: min(430px, 90vw);
+    height: min(430px, 90vw);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-section {
+    padding: 115px 0 65px;
+  }
+
+  .home-container {
+    width: 88%;
+  }
+
+  .home-title {
+    font-size: 3.5rem;
+    letter-spacing: -1px;
+  }
+
+  .home-role {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .home-description {
+    font-size: 0.97rem;
+    line-height: 1.75;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .image-circle {
+    width: 295px;
+    height: 295px;
+  }
+
+  .image-glow {
+    width: 330px;
+    height: 330px;
+  }
+
+  .circle-one {
+    left: 0;
+  }
+
+  .circle-two {
+    right: 0;
+  }
+}
