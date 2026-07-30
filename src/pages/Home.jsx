@@ -23,7 +23,7 @@ function Home() {
           </h1>
 
           <h2 className="home-role">
-            Software Developer | Data Science Undergraduate
+            Software Developer | Data Analysis
           </h2>
 
           <p className="home-description">

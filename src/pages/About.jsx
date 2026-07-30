@@ -19,16 +19,8 @@ function About() {
       title: "Degree",
       value: "BSc (Hons) in Data Science",
     },
-    {
-      icon: <FaMapMarkerAlt />,
-      title: "Location",
-      value: "Negombo, Sri Lanka",
-    },
-    {
-      icon: <FaEnvelope />,
-      title: "Email",
-      value: "thashmiemaya@gmail.com",
-    },
+   
+    
   ];
 
   return (
