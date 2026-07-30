@@ -1,69 +1,119 @@
 import {
   FaUser,
   FaGraduationCap,
-  FaMapMarkerAlt,
-  FaEnvelope,
+  FaLaptopCode,
+  FaBriefcase,
+  FaCheckCircle,
 } from "react-icons/fa";
 
 import "../styles/about.css";
 
 function About() {
-  const details = [
-    {
-      icon: <FaUser />,
-      title: "Profile",
-      value: "Software Developer | Data Science Undergraduate",
-    },
+  const highlights = [
     {
       icon: <FaGraduationCap />,
-      title: "Degree",
-      value: "BSc (Hons) in Data Science",
+      label: "Current Education",
+      title: "BSc (Hons) Data Science",
+      description: "Cardiff Metropolitan University through ICBT Campus",
     },
-   
-    
+    {
+      icon: <FaBriefcase />,
+      label: "Experience",
+      title: "Software Developer Intern",
+      description: "Ceylon Innovation Services (Pvt) Ltd",
+    },
+    {
+      icon: <FaLaptopCode />,
+      label: "Technical Focus",
+      title: "Full-Stack Development",
+      description: "React, ASP.NET Core, C#, SQL and REST APIs",
+    },
+  ];
+
+  const strengths = [
+    "Software development and problem-solving",
+    "Responsive and user-friendly interface design",
+    "Database and REST API integration",
+    "Continuous learning and professional development",
   ];
 
   return (
     <section id="about" className="about-section">
       <div className="about-container">
+        <div className="about-heading">
+          <span className="about-label">
+            <FaUser />
+            ABOUT ME
+          </span>
 
-        <span className="about-label">
-          <FaUser />
-          ABOUT ME
-        </span>
+          <h2>
+            Professional <span>Profile</span>
+          </h2>
 
-        <h2 className="about-title">
-          About <span>Me</span>
-        </h2>
-
-        <div className="about-description">
           <p>
-            I am a <span>Software Developer</span> and{" "}
-            <span>BSc (Hons) in Data Science undergraduate</span> at ICBT
-            Campus with a strong foundation in software development and
-            problem-solving. Through my academic background and internship at{" "}
-            <span>Ceylon Innovation (Pvt) Ltd</span>, I have gained hands-on
-            experience in React, ASP.NET Core, C#, JavaScript, SQL Server and
-            RESTful APIs. I am passionate about building modern,
-            user-friendly applications and continuously improving my
-            technical skills to create innovative software solutions.
+            Learn more about my academic background, technical experience and
+            career interests.
           </p>
         </div>
 
-        <div className="about-cards">
-          {details.map((detail) => (
-            <div className="about-card" key={detail.title}>
-              <div className="about-icon">
-                {detail.icon}
-              </div>
+        <div className="about-main">
+          <div className="about-introduction">
+            <span className="about-small-label">WHO I AM</span>
 
-              <h3>{detail.title}</h3>
+            <h3>
+              Software developer and undergraduate specialising in data
+              science.
+            </h3>
 
-              <p>{detail.value}</p>
+            <p>
+              I am a motivated software developer and BSc (Hons) Data Science
+              undergraduate with a strong foundation in software engineering,
+              web development and database management.
+            </p>
+
+            <p>
+              Through my academic projects and internship at Ceylon Innovation
+              Services, I have gained practical experience developing
+              responsive applications using React, ASP.NET Core, C#,
+              JavaScript, SQL Server and RESTful APIs.
+            </p>
+
+            <p>
+              My goal is to build reliable, user-focused software solutions
+              while continuously improving my knowledge in software development
+              and data science.
+            </p>
+          </div>
+
+          <div className="about-focus-card">
+            <span className="about-small-label">PROFESSIONAL FOCUS</span>
+
+            <h3>What I bring to a development team</h3>
+
+            <div className="about-strengths">
+              {strengths.map((strength) => (
+                <div className="about-strength-item" key={strength}>
+                  <FaCheckCircle />
+                  <span>{strength}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
+        <div className="about-highlights">
+          {highlights.map((item) => (
+            <article className="about-highlight-card" key={item.label}>
+              <div className="about-highlight-icon">{item.icon}</div>
+
+              <div className="about-highlight-content">
+                <span>{item.label}</span>
+                <h4>{item.title}</h4>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
