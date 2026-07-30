@@ -1,35 +1,11 @@
 import {
   FaUser,
-  FaGraduationCap,
-  FaLaptopCode,
-  FaBriefcase,
   FaCheckCircle,
 } from "react-icons/fa";
 
 import "../styles/about.css";
 
 function About() {
-  const highlights = [
-    {
-      icon: <FaGraduationCap />,
-      label: "Current Education",
-      title: "BSc (Hons) Data Science",
-      description: "Cardiff Metropolitan University through ICBT Campus",
-    },
-    {
-      icon: <FaBriefcase />,
-      label: "Experience",
-      title: "Software Developer Intern",
-      description: "Ceylon Innovation Services (Pvt) Ltd",
-    },
-    {
-      icon: <FaLaptopCode />,
-      label: "Technical Focus",
-      title: "Full-Stack Development",
-      description: "React, ASP.NET Core, C#, SQL and REST APIs",
-    },
-  ];
-
   const strengths = [
     "Software development and problem-solving",
     "Responsive and user-friendly interface design",
@@ -99,20 +75,6 @@ function About() {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="about-highlights">
-          {highlights.map((item) => (
-            <article className="about-highlight-card" key={item.label}>
-              <div className="about-highlight-icon">{item.icon}</div>
-
-              <div className="about-highlight-content">
-                <span>{item.label}</span>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-              </div>
-            </article>
-          ))}
         </div>
       </div>
     </section>
