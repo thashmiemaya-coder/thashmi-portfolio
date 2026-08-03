@@ -1,40 +1,42 @@
-import { FaExternalLinkAlt, FaCertificate } from "react-icons/fa";
+import {
+  FaAward,
+  FaExternalLinkAlt,
+  FaCertificate,
+} from "react-icons/fa";
 
-import webDesignCertificate from "../assets/certificates/web-design-certificate.jpg";
-import pythonCertificate from "../assets/certificates/python-certificate.jpg";
-import futureCareersCertificate from "../assets/certificates/future-careers-bridge.jpg";
+import webDesignCertificate from "../assets/certificates/web-design-certificate.png";
+import pythonCertificate from "../assets/certificates/Python- Beginners-certificate.png";
 
 import "../styles/certificates.css";
 
 function Certificates() {
   const certificates = [
     {
+      id: 1,
       image: webDesignCertificate,
       title: "Web Design for Beginners",
       organisation: "University of Moratuwa",
-      year: "2026",
+      category: "Web Development",
+      description:
+        "Completed foundational learning in web design, including core concepts related to modern and responsive web development.",
     },
     {
+      id: 2,
       image: pythonCertificate,
       title: "Python for Beginners",
       organisation: "University of Moratuwa",
-      year: "2026",
-    },
-    {
-      image: futureCareersCertificate,
-      title: "Future Careers Bridge",
-      organisation: "University of Moratuwa",
-      year: "2026",
+      category: "Programming",
+      description:
+        "Completed foundational training in Python programming, covering essential programming concepts and problem-solving techniques.",
     },
   ];
 
   return (
     <section id="certificates" className="certificates-section">
       <div className="certificates-container">
-
         <div className="certificates-heading">
           <span className="certificates-label">
-            <FaCertificate />
+            <FaAward />
             CERTIFICATIONS
           </span>
 
@@ -43,26 +45,27 @@ function Certificates() {
           </h2>
 
           <p>
-            Certifications and professional learning achievements that support
-            my continuous development in technology and software development.
+            Certifications and learning achievements that demonstrate my
+            continuous development in software development and programming.
           </p>
         </div>
 
         <div className="certificates-grid">
-          {certificates.map((certificate, index) => (
-            <article className="certificate-card" key={certificate.title}>
-
-              <div className="certificate-image">
+          {certificates.map((certificate) => (
+            <article className="certificate-card" key={certificate.id}>
+              <div className="certificate-image-wrapper">
                 <img
                   src={certificate.image}
                   alt={`${certificate.title} certificate`}
+                  className="certificate-image"
                 />
 
-                <div className="certificate-overlay">
+                <div className="certificate-image-overlay">
                   <a
                     href={certificate.image}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="certificate-view-button"
                   >
                     View Certificate
                     <FaExternalLinkAlt />
@@ -72,18 +75,24 @@ function Certificates() {
 
               <div className="certificate-content">
                 <div className="certificate-top">
-                  <span className="certificate-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  <div className="certificate-icon">
+                    <FaCertificate />
+                  </div>
 
-                  <span className="certificate-year">
-                    {certificate.year}
+                  <span className="certificate-category">
+                    {certificate.category}
                   </span>
                 </div>
 
                 <h3>{certificate.title}</h3>
 
-                <p>{certificate.organisation}</p>
+                <p className="certificate-organisation">
+                  {certificate.organisation}
+                </p>
+
+                <p className="certificate-description">
+                  {certificate.description}
+                </p>
 
                 <a
                   href={certificate.image}
@@ -95,11 +104,9 @@ function Certificates() {
                   <FaExternalLinkAlt />
                 </a>
               </div>
-
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );

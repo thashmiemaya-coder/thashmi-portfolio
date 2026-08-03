@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaDownload } from "react-icons/fa";
+
 import "../styles/navbar.css";
 
 function Navbar() {
