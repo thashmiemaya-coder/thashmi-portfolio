@@ -13,8 +13,6 @@ import {
   FaCode,
   FaServer,
   FaCloud,
-  FaLaptopCode,
-  FaTools,
 } from "react-icons/fa";
 
 import {
@@ -32,29 +30,28 @@ function Skills() {
   const categories = {
     frontend: {
       label: "Frontend",
-      heading: "Frontend Development",
+      title: "Frontend Development",
       description:
         "Technologies I use to create responsive, interactive and user-friendly web applications.",
-      icon: <FaLaptopCode />,
       skills: [
         {
           name: "HTML5",
-          description: "Web Structure",
+          subtitle: "Web Structure",
           icon: <FaHtml5 />,
         },
         {
           name: "CSS3",
-          description: "Responsive Styling",
+          subtitle: "Responsive Styling",
           icon: <FaCss3Alt />,
         },
         {
           name: "JavaScript",
-          description: "Web Development",
+          subtitle: "Web Development",
           icon: <FaJsSquare />,
         },
         {
           name: "React.js",
-          description: "Frontend Library",
+          subtitle: "Frontend Library",
           icon: <FaReact />,
         },
       ],
@@ -62,29 +59,28 @@ function Skills() {
 
     backend: {
       label: "Backend",
-      heading: "Backend Development",
+      title: "Backend Development",
       description:
-        "Technologies I use to develop application logic, REST APIs and server-side functionality.",
-      icon: <FaServer />,
+        "Technologies I use for application logic, APIs and server-side development.",
       skills: [
         {
           name: "C#",
-          description: "Programming Language",
+          subtitle: "Programming Language",
           icon: <FaCode />,
         },
         {
           name: "ASP.NET Core",
-          description: "Web API Development",
+          subtitle: "Web API Development",
           icon: <SiDotnet />,
         },
         {
           name: "PHP",
-          description: "Server-side Development",
+          subtitle: "Server-Side Development",
           icon: <FaPhp />,
         },
         {
           name: "REST APIs",
-          description: "API Integration",
+          subtitle: "API Development",
           icon: <FaServer />,
         },
       ],
@@ -92,24 +88,23 @@ function Skills() {
 
     databases: {
       label: "Databases",
-      heading: "Database Technologies",
+      title: "Database Technologies",
       description:
-        "Database technologies I use to store, organise, manage and retrieve application data.",
-      icon: <FaDatabase />,
+        "Database technologies I use to manage and store application data.",
       skills: [
         {
           name: "MySQL",
-          description: "Relational Database",
+          subtitle: "Relational Database",
           icon: <SiMysql />,
         },
         {
           name: "SQL Server",
-          description: "Relational Database",
+          subtitle: "Relational Database",
           icon: <FaDatabase />,
         },
         {
           name: "MongoDB",
-          description: "NoSQL Database",
+          subtitle: "NoSQL Database",
           icon: <SiMongodb />,
         },
       ],
@@ -117,39 +112,38 @@ function Skills() {
 
     tools: {
       label: "Tools",
-      heading: "Development Tools",
+      title: "Development Tools",
       description:
-        "Tools and development environments I use throughout the software development process.",
-      icon: <FaTools />,
+        "Tools and development environments I use throughout software development.",
       skills: [
         {
-          name: "VS Code",
-          description: "Code Editor",
+          name: "Visual Studio Code",
+          subtitle: "Code Editor",
           icon: <FaCode />,
         },
         {
           name: "Visual Studio",
-          description: "Development IDE",
+          subtitle: "Development IDE",
           icon: <FaCode />,
         },
         {
           name: "GitHub",
-          description: "Version Control",
+          subtitle: "Version Control",
           icon: <FaGithub />,
         },
         {
           name: "npm",
-          description: "Package Management",
+          subtitle: "Package Management",
           icon: <FaNpm />,
         },
         {
           name: "XAMPP",
-          description: "Local Development",
+          subtitle: "Local Development",
           icon: <SiXampp />,
         },
         {
           name: "Android Studio",
-          description: "Android Development",
+          subtitle: "Android Development",
           icon: <FaAndroid />,
         },
       ],
@@ -157,24 +151,23 @@ function Skills() {
 
     deployment: {
       label: "Deployment & Hosting",
-      heading: "Deployment & Hosting",
+      title: "Deployment & Hosting",
       description:
-        "Cloud and deployment platforms I use to publish and host frontend and backend applications.",
-      icon: <FaCloud />,
+        "Platforms I use to deploy and host frontend and backend applications.",
       skills: [
         {
           name: "Vercel",
-          description: "Frontend Deployment",
+          subtitle: "Frontend Deployment",
           icon: <SiVercel />,
         },
         {
           name: "Render",
-          description: "Backend Deployment",
+          subtitle: "Backend Deployment",
           icon: <SiRender />,
         },
         {
           name: "AWS",
-          description: "Cloud Hosting",
+          subtitle: "Cloud Hosting",
           icon: <FaCloud />,
         },
       ],
@@ -188,8 +181,6 @@ function Skills() {
   return (
     <section id="skills" className="skills-section">
       <div className="skills-container">
-
-        {/* Heading */}
         <div className="skills-heading">
           <span className="skills-label">
             <FaCode />
@@ -206,7 +197,6 @@ function Skills() {
           </p>
         </div>
 
-        {/* Tabs */}
         <div className="skills-tabs-wrapper">
           <div className="skills-tabs">
             {Object.entries(categories).map(([key, category]) => (
@@ -224,48 +214,34 @@ function Skills() {
           </div>
         </div>
 
-        {/* Category Content */}
-        <div className="skills-category-container">
+        <div className="active-category-heading">
+          <span>TECHNICAL CATEGORY</span>
 
-          <div className="category-header">
-            <div className="category-heading-left">
-              <div className="category-icon">
-                {currentCategory.icon}
-              </div>
+          <h3>{currentCategory.title}</h3>
 
-              <div>
-                <span className="category-label">
-                  TECHNICAL CATEGORY
+          <p>{currentCategory.description}</p>
+        </div>
+
+        <div className="skills-grid">
+          {currentCategory.skills.map((skill) => (
+            <article className="skill-card" key={skill.name}>
+              <div className="skill-card-top">
+                <div className="skill-icon">{skill.icon}</div>
+
+                <span className="skill-category-badge">
+                  {currentCategory.label}
                 </span>
-
-                <h3>{currentCategory.heading}</h3>
-
-                <p>{currentCategory.description}</p>
               </div>
-            </div>
 
-            <span className="category-count">
-              {currentCategory.skills.length} Skills
-            </span>
-          </div>
+              <div className="skill-card-content">
+                <h4>{skill.name}</h4>
 
-          {/* Skills */}
-          <div className="skills-grid">
-            {currentCategory.skills.map((skill) => (
-              <article className="skill-card" key={skill.name}>
-                <div className="skill-icon">
-                  {skill.icon}
-                </div>
+                <p>{skill.subtitle}</p>
+              </div>
 
-                <div className="skill-information">
-                  <h4>{skill.name}</h4>
-                  <p>{skill.description}</p>
-                </div>
-
-                <span className="skill-dot"></span>
-              </article>
-            ))}
-          </div>
+              <div className="skill-card-line"></div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
