@@ -31,8 +31,6 @@ function Certificates() {
   return (
     <section id="certificates" className="certificates-section">
       <div className="certificates-container">
-
-        {/* Section Heading */}
         <div className="certificates-heading">
           <span className="certificates-label">
             <FaCertificate />
@@ -49,19 +47,16 @@ function Certificates() {
           </p>
         </div>
 
-        {/* Certificate Cards */}
         <div className="certificates-grid">
           {certificates.map((certificate) => (
             <article
               className="certificate-card"
               key={certificate.id}
             >
-              {/* Number */}
               <span className="certificate-number">
                 {certificate.id}
               </span>
 
-              {/* Top */}
               <div className="certificate-card-top">
                 <div className="certificate-icon">
                   {certificate.icon}
@@ -72,7 +67,6 @@ function Certificates() {
                 </span>
               </div>
 
-              {/* Content */}
               <div className="certificate-content">
                 <span className="certificate-small-label">
                   CERTIFICATE
@@ -90,7 +84,6 @@ function Certificates() {
                 </div>
               </div>
 
-              {/* Bottom */}
               <div className="certificate-bottom">
                 {certificate.link ? (
                   <a
