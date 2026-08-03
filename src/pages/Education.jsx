@@ -11,7 +11,7 @@ import "../styles/education.css";
 function Education() {
   const educationData = [
     {
-      number: "01",
+      
       status: "Currently Studying",
       title: "BSc (Hons) in Data Science",
       institution: "Cardiff Metropolitan University through ICBT Campus",
@@ -22,7 +22,7 @@ function Education() {
       icon: <FaUniversity />,
     },
     {
-      number: "02",
+      
       status: "Completed",
       title: "Higher National Diploma in Computing and Software Engineering",
       institution: "ICBT Campus",
@@ -33,7 +33,7 @@ function Education() {
       icon: <FaGraduationCap />,
     },
     {
-      number: "03",
+      
       status: "Additional Learning",
       title: "Professional and Online Courses",
       institution: "University of Moratuwa and Online Learning Platforms",
