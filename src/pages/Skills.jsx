@@ -45,7 +45,7 @@ function Skills() {
       category: "Backend",
     },
     {
-      name: "ASP.NET Core",
+      name: "ASP.NET Core Web API",
       level: 75,
       icon: <SiDotnet />,
       category: "Backend",
@@ -57,13 +57,13 @@ function Skills() {
       category: "Programming",
     },
     {
-      name: "SQL",
+      name: "SQL Server",
       level: 85,
       icon: <FaDatabase />,
       category: "Database",
     },
     {
-      name: "Git & GitHub",
+      name: "Git & GitHub Source code",
       level: 80,
       icon: <FaGithub />,
       category: "Development Tool",
