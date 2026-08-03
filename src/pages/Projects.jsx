@@ -13,7 +13,7 @@ import "../styles/projects.css";
 function Projects() {
   const projects = [
     {
-      number: "01",
+      
       icon: <FaShoppingBasket />,
       title: "Mini Inventory System",
       description:
@@ -22,7 +22,7 @@ function Projects() {
       link: "https://frontend-mini-inventory-shop.vercel.app/dashboard",
     },
     {
-      number: "02",
+      
       icon: <FaDumbbell />,
       title: "FitZone Fitness Centre",
       description:
@@ -31,7 +31,7 @@ function Projects() {
       link: "https://github.com/thashmiemaya-coder/Fitzone-Gym-Website",
     },
     {
-      number: "03",
+     
       icon: <FaHotel />,
       title: "LuxeVista Resort App",
       description:
@@ -40,7 +40,7 @@ function Projects() {
       link: "https://github.com/thashmiemaya-coder/LuxeVistaResort-MobileApp",
     },
     {
-      number: "04",
+      
       icon: <FaShoppingCart />,
       title: "Murukku E-Commerce Web Application",
       description:
@@ -49,7 +49,7 @@ function Projects() {
       link: "https://github.com/thashmiemaya-coder/murukku-react-frontend",
     },
     {
-      number: "05",
+      
       icon: <FaBookOpen />,
       title: "BookHeaven – Online Bookstore",
       description:
