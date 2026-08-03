@@ -10,17 +10,16 @@ import {
   FaAndroid,
   FaCode,
   FaServer,
+  FaCloud,
 } from "react-icons/fa";
 
 import {
-  SiCsharp,
   SiDotnet,
   SiMysql,
   SiMongodb,
   SiXampp,
   SiVercel,
   SiRender,
-  SiAmazonaws,
 } from "react-icons/si";
 
 import "../styles/skills.css";
@@ -30,46 +29,110 @@ function Skills() {
     {
       title: "Frontend Development",
       skills: [
-        { name: "HTML5", icon: <FaHtml5 /> },
-        { name: "CSS3", icon: <FaCss3Alt /> },
-        { name: "JavaScript", icon: <FaJsSquare /> },
-        { name: "React.js", icon: <FaReact /> },
+        {
+          name: "HTML5",
+          icon: <FaHtml5 />,
+        },
+        {
+          name: "CSS3",
+          icon: <FaCss3Alt />,
+        },
+        {
+          name: "JavaScript",
+          icon: <FaJsSquare />,
+        },
+        {
+          name: "React.js",
+          icon: <FaReact />,
+        },
       ],
     },
+
     {
       title: "Backend Development",
       skills: [
-        { name: "C#", icon: <SiCsharp /> },
-        { name: "ASP.NET Core", icon: <SiDotnet /> },
-        { name: "PHP", icon: <FaPhp /> },
-        { name: "REST APIs", icon: <FaServer /> },
+        {
+          name: "C#",
+          icon: <FaCode />,
+        },
+        {
+          name: "ASP.NET Core",
+          icon: <SiDotnet />,
+        },
+        {
+          name: "PHP",
+          icon: <FaPhp />,
+        },
+        {
+          name: "REST APIs",
+          icon: <FaServer />,
+        },
       ],
     },
+
     {
       title: "Databases",
       skills: [
-        { name: "MySQL", icon: <SiMysql /> },
-        { name: "MongoDB", icon: <SiMongodb /> },
-        { name: "SQL Server", icon: <FaDatabase /> },
+        {
+          name: "MySQL",
+          icon: <SiMysql />,
+        },
+        {
+          name: "MongoDB",
+          icon: <SiMongodb />,
+        },
+        {
+          name: "SQL Server",
+          icon: <FaDatabase />,
+        },
       ],
     },
+
     {
       title: "Development Tools",
       skills: [
-        { name: "Visual Studio Code", icon: <FaCode /> },
-        { name: "Visual Studio", icon: <FaCode /> },
-        { name: "GitHub", icon: <FaGithub /> },
-        { name: "npm", icon: <FaNpm /> },
-        { name: "XAMPP", icon: <SiXampp /> },
-        { name: "Android Studio", icon: <FaAndroid /> },
+        {
+          name: "Visual Studio Code",
+          icon: <FaCode />,
+        },
+        {
+          name: "Visual Studio",
+          icon: <FaCode />,
+        },
+        {
+          name: "GitHub",
+          icon: <FaGithub />,
+        },
+        {
+          name: "npm",
+          icon: <FaNpm />,
+        },
+        {
+          name: "XAMPP",
+          icon: <SiXampp />,
+        },
+        {
+          name: "Android Studio",
+          icon: <FaAndroid />,
+        },
       ],
     },
+
     {
       title: "Deployment & Hosting",
       skills: [
-        { name: "Vercel", icon: <SiVercel /> },
-        { name: "Render", icon: <SiRender /> },
-        { name: "AWS", icon: <SiAmazonaws /> },
+        {
+          name: "Vercel",
+          icon: <SiVercel />,
+        },
+        {
+          name: "Render",
+          icon: <SiRender />,
+        },
+        {
+          name: "AWS",
+          icon: <FaCloud />,
+        },
       ],
     },
   ];
@@ -96,19 +159,19 @@ function Skills() {
         <div className="skills-groups">
           {skillGroups.map((group) => (
             <div className="skill-group" key={group.title}>
-              <h3>{group.title}</h3>
+              <div className="skill-group-header">
+                <h3>{group.title}</h3>
+              </div>
 
               <div className="skills-grid">
                 {group.skills.map((skill) => (
-                  <div className="skill-card" key={skill.name}>
-                    <div className="skill-icon">
-                      {skill.icon}
-                    </div>
+                  <article className="skill-card" key={skill.name}>
+                    <div className="skill-icon">{skill.icon}</div>
 
                     <span className="skill-name">
                       {skill.name}
                     </span>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
