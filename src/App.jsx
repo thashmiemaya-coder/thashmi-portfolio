@@ -7,7 +7,9 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Education from "./pages/Education";
+import Certificates from "./pages/Certificates";
 import Contact from "./pages/Contact";
+
 
 function App() {
   return (
