@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -25,117 +27,76 @@ import {
 import "../styles/skills.css";
 
 function Skills() {
-  const skillGroups = [
-    {
+  const categories = {
+    frontend: {
+      label: "Frontend",
       title: "Frontend Development",
+      description:
+        "Technologies I use to build responsive and interactive user interfaces.",
       skills: [
-        {
-          name: "HTML5",
-          icon: <FaHtml5 />,
-        },
-        {
-          name: "CSS3",
-          icon: <FaCss3Alt />,
-        },
-        {
-          name: "JavaScript",
-          icon: <FaJsSquare />,
-        },
-        {
-          name: "React.js",
-          icon: <FaReact />,
-        },
+        { name: "HTML5", icon: <FaHtml5 /> },
+        { name: "CSS3", icon: <FaCss3Alt /> },
+        { name: "JavaScript", icon: <FaJsSquare /> },
+        { name: "React.js", icon: <FaReact /> },
       ],
     },
 
-    {
+    backend: {
+      label: "Backend",
       title: "Backend Development",
+      description:
+        "Technologies I use to build APIs, application logic and server-side functionality.",
       skills: [
-        {
-          name: "C#",
-          icon: <FaCode />,
-        },
-        {
-          name: "ASP.NET Core",
-          icon: <SiDotnet />,
-        },
-        {
-          name: "PHP",
-          icon: <FaPhp />,
-        },
-        {
-          name: "REST APIs",
-          icon: <FaServer />,
-        },
+        { name: "C#", icon: <FaCode /> },
+        { name: "ASP.NET Core", icon: <SiDotnet /> },
+        { name: "PHP", icon: <FaPhp /> },
+        { name: "REST APIs", icon: <FaServer /> },
       ],
     },
 
-    {
-      title: "Databases",
+    databases: {
+      label: "Databases",
+      title: "Database Technologies",
+      description:
+        "Database technologies I use for storing, managing and retrieving application data.",
       skills: [
-        {
-          name: "MySQL",
-          icon: <SiMysql />,
-        },
-        {
-          name: "MongoDB",
-          icon: <SiMongodb />,
-        },
-        {
-          name: "SQL Server",
-          icon: <FaDatabase />,
-        },
+        { name: "MySQL", icon: <SiMysql /> },
+        { name: "MongoDB", icon: <SiMongodb /> },
+        { name: "SQL Server", icon: <FaDatabase /> },
       ],
     },
 
-    {
+    tools: {
+      label: "Tools",
       title: "Development Tools",
+      description:
+        "Development environments and tools I use while building and managing software projects.",
       skills: [
-        {
-          name: "Visual Studio Code",
-          icon: <FaCode />,
-        },
-        {
-          name: "Visual Studio",
-          icon: <FaCode />,
-        },
-        {
-          name: "GitHub",
-          icon: <FaGithub />,
-        },
-        {
-          name: "npm",
-          icon: <FaNpm />,
-        },
-        {
-          name: "XAMPP",
-          icon: <SiXampp />,
-        },
-        {
-          name: "Android Studio",
-          icon: <FaAndroid />,
-        },
+        { name: "Visual Studio Code", icon: <FaCode /> },
+        { name: "Visual Studio", icon: <FaCode /> },
+        { name: "GitHub", icon: <FaGithub /> },
+        { name: "npm", icon: <FaNpm /> },
+        { name: "XAMPP", icon: <SiXampp /> },
+        { name: "Android Studio", icon: <FaAndroid /> },
       ],
     },
 
-    {
+    deployment: {
+      label: "Deployment & Hosting",
       title: "Deployment & Hosting",
+      description:
+        "Platforms I use to deploy, host and manage frontend and backend applications.",
       skills: [
-        {
-          name: "Vercel",
-          icon: <SiVercel />,
-        },
-        {
-          name: "Render",
-          icon: <SiRender />,
-        },
-        {
-          name: "AWS",
-          icon: <FaCloud />,
-        },
+        { name: "Vercel", icon: <SiVercel /> },
+        { name: "Render", icon: <SiRender /> },
+        { name: "AWS", icon: <FaCloud /> },
       ],
     },
-  ];
+  };
+
+  const [activeCategory, setActiveCategory] = useState("frontend");
+
+  const activeSkills = categories[activeCategory];
 
   return (
     <section id="skills" className="skills-section">
@@ -151,31 +112,42 @@ function Skills() {
           </h2>
 
           <p>
-            Technologies, databases, development tools and deployment platforms
-            I use to build modern and reliable software applications.
+            Explore the technologies, databases, development tools and
+            deployment platforms I use in software development.
           </p>
         </div>
 
-        <div className="skills-groups">
-          {skillGroups.map((group) => (
-            <div className="skill-group" key={group.title}>
-              <div className="skill-group-header">
-                <h3>{group.title}</h3>
-              </div>
-
-              <div className="skills-grid">
-                {group.skills.map((skill) => (
-                  <article className="skill-card" key={skill.name}>
-                    <div className="skill-icon">{skill.icon}</div>
-
-                    <span className="skill-name">
-                      {skill.name}
-                    </span>
-                  </article>
-                ))}
-              </div>
-            </div>
+        <div className="skills-tabs">
+          {Object.entries(categories).map(([key, category]) => (
+            <button
+              key={key}
+              type="button"
+              className={`skills-tab ${
+                activeCategory === key ? "active" : ""
+              }`}
+              onClick={() => setActiveCategory(key)}
+            >
+              {category.label}
+            </button>
           ))}
+        </div>
+
+        <div className="skills-content">
+          <div className="skills-content-heading">
+            <span>TECHNICAL CATEGORY</span>
+            <h3>{activeSkills.title}</h3>
+            <p>{activeSkills.description}</p>
+          </div>
+
+          <div className="skills-grid">
+            {activeSkills.skills.map((skill) => (
+              <article className="skill-card" key={skill.name}>
+                <div className="skill-icon">{skill.icon}</div>
+
+                <span className="skill-name">{skill.name}</span>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
