@@ -4,6 +4,7 @@ import {
   FaHotel,
   FaShoppingCart,
   FaBookOpen,
+  FaVoteYea,
   FaArrowRight,
   FaCode,
 } from "react-icons/fa";
