@@ -57,6 +57,14 @@ function Projects() {
       technologies: ["React", "JavaScript", "MongoDB"],
       link: "https://book-heaven-frontend-pink.vercel.app/",
     },
+   {
+  icon: <FaVoteYea />,
+  title: "Decentralized Voting DApp",
+  description:
+    "A secure decentralized voting application built using React and ethers.js, enabling users to connect their MetaMask wallet, participate in blockchain-based elections, authorize voters, cast votes and view transparent election results through a smart contract.",
+  technologies: ["React", "JavaScript", "ethers.js", "Solidity", "MetaMask", "Ethereum"],
+  link: "https://github.com/thashmiemaya-coder/decentralized-voting-dapp",
+    },
   ];
 
   return (
