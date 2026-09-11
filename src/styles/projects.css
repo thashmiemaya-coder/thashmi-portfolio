@@ -441,3 +441,55 @@
     font-size: 0.68rem;
   }
 }
+
+/* Project Category Filters */
+
+.project-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 35px 0 45px;
+  flex-wrap: wrap;
+}
+
+.project-filters button {
+  padding: 10px 22px;
+  border: 1px solid rgba(220, 100, 220, 0.4);
+  border-radius: 25px;
+  background: transparent;
+  color: #d8cce8;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-filters button:hover {
+  border-color: #d85bdc;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.project-filters button.active {
+  background: linear-gradient(90deg, #e83e9f, #7c5cff);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(210, 70, 190, 0.3);
+}
+
+/* Category text on project card */
+
+.project-category {
+  font-size: 11px;
+  color: #c9a7e8;
+  text-align: right;
+  max-width: 120px;
+}
+
+/* Disabled project link */
+
+.project-link-disabled {
+  opacity: 0.6;
+  cursor: default;
+}
