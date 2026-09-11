@@ -10,7 +10,7 @@ import {
   FaChartBar,
   FaDatabase,
   FaChartLine,
-  FaHeartbeat
+  FaHeartbeat,
 } from "react-icons/fa";
 
 import { useState } from "react";
@@ -98,7 +98,7 @@ function Projects() {
 
     {
       icon: <FaChartBar />,
-      image: "/images/data-science/vehicle-analysis.png",
+      image: "/images/vehicle-analysis.png",
       title: "Vehicle Price Analysis",
       description:
         "An exploratory data analysis project investigating vehicle characteristics and their relationship with vehicle prices using statistical analysis and data visualization.",
@@ -123,7 +123,7 @@ function Projects() {
         "Pandas",
         "SQL",
         "Data Analysis",
-        "POWER BI",
+        "Power BI",
       ],
       category: "Data Science & Analytics",
       link: "#",
@@ -131,7 +131,7 @@ function Projects() {
 
     {
       icon: <FaChartLine />,
-      image: "/images/data-science/business-dashboard.png",
+      image: "/images/business-dashboard.png",
       title: "Business Analytics Dashboard",
       description:
         "An interactive analytics dashboard designed to monitor business performance, sales trends and key performance indicators.",
@@ -145,19 +145,19 @@ function Projects() {
     },
 
     {
-  icon: <FaHeartbeat />,
-  image: "/images/heart-disease-dashboard.png",
-  title: "Heart Disease Analysis Dashboard",
-  description:
-    "An interactive Tableau dashboard designed to analyse heart disease patterns, patient characteristics and key health indicators.",
-  technologies: [
-    "Tableau",
-    "Data Analytics",
-    "Data Visualization",
-],
-  category: "Data Science & Analytics",
-  link: "#",
-},
+      icon: <FaHeartbeat />,
+      image: "/images/heart-disease-dashboard.png",
+      title: "Heart Disease Analysis Dashboard",
+      description:
+        "An interactive Tableau dashboard designed to analyse heart disease patterns, patient characteristics and key health indicators.",
+      technologies: [
+        "Tableau",
+        "Data Analytics",
+        "Data Visualization",
+      ],
+      category: "Data Science & Analytics",
+      link: "#",
+    },
   ];
 
   const filteredProjects =
@@ -259,8 +259,10 @@ function Projects() {
 
               </div>
 
+              {/* Project Title */}
               <h3>{project.title}</h3>
 
+              {/* Description */}
               <p className="project-description">
                 {project.description}
               </p>
