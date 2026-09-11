@@ -7,9 +7,7 @@ import {
   FaVoteYea,
   FaArrowRight,
   FaCode,
-  FaChartBar,
   FaDatabase,
-  FaChartLine,
   FaHeartbeat,
 } from "react-icons/fa";
 
@@ -96,22 +94,7 @@ function Projects() {
     // DATA SCIENCE & ANALYTICS
     // =========================
 
-    {
-      icon: <FaChartBar />,
-      image: "/images/vehicle-analysis.png",
-      title: "Vehicle Price Analysis",
-      description:
-        "An exploratory data analysis project investigating vehicle characteristics and their relationship with vehicle prices using statistical analysis and data visualization.",
-      technologies: [
-        "Python",
-        "Pandas",
-        "Statistics",
-        "Data Visualization",
-      ],
-      category: "Data Science & Analytics",
-      link: "#",
-    },
-
+    
     {
       icon: <FaDatabase />,
       image: "/images/sales-analysis.png",
@@ -124,21 +107,6 @@ function Projects() {
         "SQL",
         "Data Analysis",
         "Power BI",
-      ],
-      category: "Data Science & Analytics",
-      link: "#",
-    },
-
-    {
-      icon: <FaChartLine />,
-      image: "/images/business-dashboard.png",
-      title: "Business Analytics Dashboard",
-      description:
-        "An interactive analytics dashboard designed to monitor business performance, sales trends and key performance indicators.",
-      technologies: [
-        "Power BI",
-        "Excel",
-        "Data Analytics",
       ],
       category: "Data Science & Analytics",
       link: "#",
