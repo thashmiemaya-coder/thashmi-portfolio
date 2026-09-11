@@ -442,7 +442,9 @@
   }
 }
 
-/* Project Category Filters */
+/* =========================
+   PROJECT FILTERS
+========================= */
 
 .project-filters {
   display: flex;
@@ -478,7 +480,36 @@
   box-shadow: 0 5px 20px rgba(210, 70, 190, 0.3);
 }
 
-/* Category text on project card */
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(220, 100, 220, 0.25);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   PROJECT CATEGORY
+========================= */
 
 .project-category {
   font-size: 11px;
@@ -487,7 +518,10 @@
   max-width: 120px;
 }
 
-/* Disabled project link */
+
+/* =========================
+   DISABLED LINK
+========================= */
 
 .project-link-disabled {
   opacity: 0.6;

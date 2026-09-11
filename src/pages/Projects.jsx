@@ -20,6 +20,10 @@ function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    // =========================
+    // SOFTWARE DEVELOPMENT
+    // =========================
+
     {
       icon: <FaShoppingBasket />,
       title: "Mini Inventory System",
@@ -88,35 +92,52 @@ function Projects() {
     },
 
     // =========================
-    // DATA SCIENCE PROJECTS
+    // DATA SCIENCE & ANALYTICS
     // =========================
 
     {
       icon: <FaChartBar />,
+      image: "/images/data-science/vehicle-analysis.png",
       title: "Vehicle Price Analysis",
       description:
         "An exploratory data analysis project investigating vehicle characteristics and their relationship with vehicle prices using statistical analysis and data visualization.",
-      technologies: ["Python", "Pandas", "Statistics", "Matplotlib"],
+      technologies: [
+        "Python",
+        "Pandas",
+        "Statistics",
+        "Data Visualization",
+      ],
       category: "Data Science & Analytics",
       link: "#",
     },
 
     {
       icon: <FaDatabase />,
-      title: "Business Sales Analysis",
+      image: "/images/data-science/sales-analysis.png",
+      title: "Sales Data Analysis",
       description:
-        "A data analysis project focused on identifying sales trends, top-performing products and key business insights from sales data.",
-      technologies: ["Python", "Pandas", "SQL", "Data Analysis"],
+        "A data analysis project focused on exploring sales data, identifying trends and generating meaningful business insights.",
+      technologies: [
+        "Python",
+        "Pandas",
+        "SQL",
+        "Data Analysis",
+      ],
       category: "Data Science & Analytics",
       link: "#",
     },
 
     {
       icon: <FaChartLine />,
-      title: "Business Performance Dashboard",
+      image: "/images/data-science/business-dashboard.png",
+      title: "Business Analytics Dashboard",
       description:
-        "An interactive business intelligence dashboard designed to monitor sales, profit, product performance and overall business performance.",
-      technologies: ["Power BI", "Excel", "Data Analytics"],
+        "An interactive analytics dashboard designed to monitor business performance, sales trends and key performance indicators.",
+      technologies: [
+        "Power BI",
+        "Excel",
+        "Data Analytics",
+      ],
       category: "Data Science & Analytics",
       link: "#",
     },
@@ -145,13 +166,13 @@ function Projects() {
           </h2>
 
           <p>
-            A selection of software development, data science and analytics
-            projects that demonstrate my technical knowledge, creativity and
-            problem-solving skills.
+            A selection of software development, data science and
+            analytics projects that demonstrate my technical knowledge,
+            creativity and problem-solving skills.
           </p>
         </div>
 
-        {/* Category Filter */}
+        {/* Category Filters */}
         <div className="project-filters">
 
           <button
@@ -163,7 +184,9 @@ function Projects() {
 
           <button
             className={
-              activeCategory === "Software Development" ? "active" : ""
+              activeCategory === "Software Development"
+                ? "active"
+                : ""
             }
             onClick={() =>
               setActiveCategory("Software Development")
@@ -174,7 +197,9 @@ function Projects() {
 
           <button
             className={
-              activeCategory === "Data Science & Analytics" ? "active" : ""
+              activeCategory === "Data Science & Analytics"
+                ? "active"
+                : ""
             }
             onClick={() =>
               setActiveCategory("Data Science & Analytics")
@@ -185,12 +210,28 @@ function Projects() {
 
         </div>
 
-        {/* Projects */}
+        {/* Projects Grid */}
         <div className="projects-grid">
-          {filteredProjects.map((project) => (
-            <article className="project-card" key={project.title}>
 
+          {filteredProjects.map((project) => (
+            <article
+              className="project-card"
+              key={project.title}
+            >
+
+              {/* Project Image */}
+              {project.image && (
+                <div className="project-image">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                  />
+                </div>
+              )}
+
+              {/* Top Section */}
               <div className="project-top">
+
                 <div className="project-icon">
                   {project.icon}
                 </div>
@@ -198,6 +239,7 @@ function Projects() {
                 <span className="project-category">
                   {project.category}
                 </span>
+
               </div>
 
               <h3>{project.title}</h3>
@@ -206,14 +248,18 @@ function Projects() {
                 {project.description}
               </p>
 
+              {/* Technologies */}
               <div className="project-technologies">
+
                 {project.technologies.map((technology) => (
                   <span key={technology}>
                     {technology}
                   </span>
                 ))}
+
               </div>
 
+              {/* Project Link */}
               {project.link && project.link !== "#" ? (
                 <a
                   href={project.link}
@@ -233,6 +279,7 @@ function Projects() {
 
             </article>
           ))}
+
         </div>
 
       </div>
