@@ -10,6 +10,7 @@ import {
   FaChartBar,
   FaDatabase,
   FaChartLine,
+  FaHeartbeat
 } from "react-icons/fa";
 
 import { useState } from "react";
