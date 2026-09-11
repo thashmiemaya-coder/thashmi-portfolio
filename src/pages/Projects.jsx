@@ -113,7 +113,7 @@ function Projects() {
 
     {
       icon: <FaDatabase />,
-      image: "/images/data-science/sales-analysis.png",
+      image: "/images/sales-analysis.png",
       title: "Sales Data Analysis",
       description:
         "A data analysis project focused on exploring sales data, identifying trends and generating meaningful business insights.",
@@ -122,6 +122,7 @@ function Projects() {
         "Pandas",
         "SQL",
         "Data Analysis",
+        "POWER BI",
       ],
       category: "Data Science & Analytics",
       link: "#",
@@ -141,6 +142,21 @@ function Projects() {
       category: "Data Science & Analytics",
       link: "#",
     },
+
+    {
+  icon: <FaHeartbeat />,
+  image: "/images/heart-disease-dashboard.png",
+  title: "Heart Disease Analysis Dashboard",
+  description:
+    "An interactive Tableau dashboard designed to analyse heart disease patterns, patient characteristics and key health indicators.",
+  technologies: [
+    "Tableau",
+    "Data Analytics",
+    "Data Visualization",
+],
+  category: "Data Science & Analytics",
+  link: "#",
+},
   ];
 
   const filteredProjects =
