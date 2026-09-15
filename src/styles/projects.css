@@ -77,6 +77,25 @@
   line-height: 1.8;
 }
 
+.project-category {
+  position: relative;
+  z-index: 2;
+
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: #d89be7;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  text-align: right;
+}
+
+
 /* ================================
    PROJECT GRID
 ================================ */
