@@ -19,9 +19,9 @@ function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
-    // =========================
+    // ==========================================
     // SOFTWARE DEVELOPMENT
-    // =========================
+    // ==========================================
 
     {
       icon: <FaShoppingBasket />,
@@ -84,7 +84,7 @@ function Projects() {
         "ethers.js",
         "Solidity",
         "MetaMask",
-        "Ethereum Sepolia Test Network",
+        "Ethereum Sepolia",
         "Hardhat",
         "Mocha + Chai",
         "Vite",
@@ -95,11 +95,10 @@ function Projects() {
       link: "https://github.com/thashmiemaya-coder/decentralized-voting-dapp",
     },
 
-    // =========================
+    // ==========================================
     // DATA SCIENCE & ANALYTICS
-    // =========================
+    // ==========================================
 
-    
     {
       icon: <FaDatabase />,
       image: "/images/sales-analysis.png",
@@ -114,7 +113,9 @@ function Projects() {
         "Power BI",
       ],
       category: "Data Science & Analytics",
-      link: "#",
+
+      // Image will be opened in a new tab
+      dashboardLink: "/images/sales-analysis.png",
     },
 
     {
@@ -130,9 +131,15 @@ function Projects() {
         "Data Visualisation",
       ],
       category: "Data Science & Analytics",
-      link: "#",
+
+      // Image will be opened in a new tab
+      dashboardLink: "/images/heart-disease-dashboard.png",
     },
   ];
+
+  // ==========================================
+  // FILTER PROJECTS
+  // ==========================================
 
   const filteredProjects =
     activeCategory === "All"
@@ -143,139 +150,239 @@ function Projects() {
 
   return (
     <section id="projects" className="projects-section">
-      <div className="projects-container">
 
-        {/* Heading */}
-        <div className="projects-heading">
-          <span className="projects-label">
-            <FaCode />
-            PROJECTS
-          </span>
+      {/* ======================================
+          SECTION HEADER
+      ====================================== */}
 
-          <h2>
-            Featured <span>Projects</span>
-          </h2>
+      <div className="projects-heading">
 
-          <p>
-            A selection of software development, data science and
-            analytics projects that demonstrate my technical knowledge,
-            creativity and problem-solving skills.
-          </p>
-        </div>
+        <span className="projects-label">
+          <FaCode />
+          PROJECTS
+        </span>
 
-        {/* Category Filters */}
-        <div className="project-filters">
+        <h2>
+          Featured <span>Projects</span>
+        </h2>
 
-          <button
-            className={activeCategory === "All" ? "active" : ""}
-            onClick={() => setActiveCategory("All")}
+        <p>
+          A selection of software development, data science and
+          analytics projects that demonstrate my technical knowledge,
+          creativity and problem-solving skills.
+        </p>
+
+      </div>
+
+
+      {/* ======================================
+          CATEGORY FILTERS
+      ====================================== */}
+
+      <div className="project-filters">
+
+        <button
+          className={activeCategory === "All" ? "active" : ""}
+          onClick={() => setActiveCategory("All")}
+        >
+          All
+        </button>
+
+        <button
+          className={
+            activeCategory === "Software Development"
+              ? "active"
+              : ""
+          }
+          onClick={() =>
+            setActiveCategory("Software Development")
+          }
+        >
+          Software Development
+        </button>
+
+        <button
+          className={
+            activeCategory === "Data Science & Analytics"
+              ? "active"
+              : ""
+          }
+          onClick={() =>
+            setActiveCategory("Data Science & Analytics")
+          }
+        >
+          Data Science & Analytics
+        </button>
+
+      </div>
+
+
+      {/* ======================================
+          PROJECT CARDS
+      ====================================== */}
+
+      <div className="projects-grid">
+
+        {filteredProjects.map((project, index) => (
+
+          <article
+            className="project-card"
+            key={project.title}
           >
-            All
-          </button>
 
-          <button
-            className={
-              activeCategory === "Software Development"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setActiveCategory("Software Development")
-            }
-          >
-            Software Development
-          </button>
+            {/* ==================================
+                DASHBOARD IMAGE
+            ================================== */}
 
-          <button
-            className={
-              activeCategory === "Data Science & Analytics"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setActiveCategory("Data Science & Analytics")
-            }
-          >
-            Data Science & Analytics
-          </button>
+            {project.image && (
 
-        </div>
+              <a
+                href={project.dashboardLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-image-link"
+                title="Click to view dashboard"
+              >
 
-        {/* Projects Grid */}
-        <div className="projects-grid">
+                <div className="project-image-wrapper">
 
-          {filteredProjects.map((project) => (
-            <article
-              className="project-card"
-              key={project.title}
-            >
-
-              {/* Project Image */}
-              {project.image && (
-                <div className="project-image">
                   <img
                     src={project.image}
                     alt={project.title}
+                    className="project-image"
                   />
+
+                  {/* IMAGE OVERLAY */}
+
+                  <div className="project-image-overlay">
+
+                    <div className="dashboard-view">
+
+                      <FaArrowRight />
+
+                      <span>
+                        View Dashboard
+                      </span>
+
+                    </div>
+
+                  </div>
+
                 </div>
-              )}
 
-              {/* Top Section */}
-              <div className="project-top">
+              </a>
 
-                <div className="project-icon">
-                  {project.icon}
-                </div>
+            )}
 
-                <span className="project-category">
-                  {project.category}
-                </span>
 
+            {/* ==================================
+                TOP AREA
+            ================================== */}
+
+            <div className="project-top">
+
+              <div className="project-icon">
+                {project.icon}
               </div>
 
-              {/* Project Title */}
-              <h3>{project.title}</h3>
+              <span className="project-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
 
-              {/* Description */}
-              <p className="project-description">
-                {project.description}
-              </p>
+            </div>
 
-              {/* Technologies */}
-              <div className="project-technologies">
 
-                {project.technologies.map((technology) => (
-                  <span key={technology}>
+            {/* ==================================
+                CATEGORY
+            ================================== */}
+
+            <div className="project-category">
+              {project.category}
+            </div>
+
+
+            {/* ==================================
+                TITLE
+            ================================== */}
+
+            <h3>
+              {project.title}
+            </h3>
+
+
+            {/* ==================================
+                DESCRIPTION
+            ================================== */}
+
+            <p className="project-description">
+              {project.description}
+            </p>
+
+
+            {/* ==================================
+                TECHNOLOGIES
+            ================================== */}
+
+            <div className="project-technologies">
+
+              {project.technologies.map(
+                (technology) => (
+
+                  <span
+                    key={technology}
+                    className="technology-tag"
+                  >
                     {technology}
                   </span>
-                ))}
 
-              </div>
-
-              {/* Project Link */}
-              {project.link && project.link !== "#" ? (
-                <a
-                  href={project.link}
-                  className="project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project
-                  <FaArrowRight />
-                </a>
-              ) : (
-                <span className="project-link project-link-disabled">
-                  Coming Soon
-                  <FaArrowRight />
-                </span>
+                )
               )}
 
-            </article>
-          ))}
+            </div>
 
-        </div>
+
+            {/* ==================================
+                PROJECT BUTTON
+            ================================== */}
+
+            {project.dashboardLink ? (
+
+              <a
+                href={project.dashboardLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+              >
+
+                View Dashboard
+
+                <FaArrowRight />
+
+              </a>
+
+            ) : (
+
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+              >
+
+                View Project
+
+                <FaArrowRight />
+
+              </a>
+
+            )}
+
+          </article>
+
+        ))}
 
       </div>
+
     </section>
   );
 }
