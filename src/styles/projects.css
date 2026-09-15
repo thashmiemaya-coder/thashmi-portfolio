@@ -23,64 +23,59 @@
    HEADER
 ================================ */
 
-.projects-header {
+.projects-heading {
+  max-width: 900px;
+  margin: 0 auto 65px;
   text-align: center;
-  max-width: 1000px;
-  margin: 0 auto 75px;
 }
 
-.section-label {
-  display: flex;
-  justify-content: center;
+.projects-label {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 
-  color: #e89bea;
-  font-size: 17px;
+  margin-bottom: 15px;
+
+  color: #f0abfc;
+
+  font-size: 0.95rem;
   font-weight: 800;
   letter-spacing: 2px;
-
-  margin-bottom: 20px;
 }
 
-.section-label svg {
-  font-size: 16px;
-}
-
-.projects-header h2 {
-  margin: 0;
-
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  font-weight: 900;
-  line-height: 1.05;
+.projects-heading h2 {
+  margin: 0 0 20px;
 
   color: #ffffff;
+
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
 }
 
-.projects-header h2 span {
+.projects-heading h2 span {
   background: linear-gradient(
     90deg,
-    #ec3bb5,
-    #a644e8,
-    #5f7cff
+    #ec4899,
+    #c026d3,
+    #3b82f6
   );
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
 }
 
-.projects-header p {
-  margin: 30px auto 0;
+.projects-heading p {
+  margin: 0;
 
-  max-width: 950px;
+  color: #aaa1b6;
 
-  color: #aaa6b8;
-
-  font-size: 20px;
+  font-size: 1.05rem;
   line-height: 1.8;
 }
-
 
 /* ================================
    PROJECT GRID
